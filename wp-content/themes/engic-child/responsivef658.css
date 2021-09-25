@@ -1,0 +1,28 @@
+@media only screen and (max-width: 1023px){
+	#eut-header .eut-logo,
+	#eut-header #eut-inner-header,
+	#eut-header #eut-header-wrapper,
+	#eut-header .eut-menu-options{
+		height: 170px !important;
+	}
+	#eut-header.eut-default .eut-menu-elements-wrapper{
+		border: none !important;
+	}
+
+	#eut-header .eut-logo .eut-logo-wrapper,
+	#eut-header .eut-logo .eut-logo-wrapper img{
+		top: 0;
+	}
+}
+
+.eut-side-area .eut-main-menu-wrapper{
+	padding-left: 15px;
+}
+
+@media only screen and (max-width: 991px){
+	#eut-header #eut-feature-section .eut-title > span:first-child{
+		padding: 30px 50px;
+		font-size: 25px;
+		letter-spacing: 9px;
+	}
+}
