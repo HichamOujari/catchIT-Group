@@ -2738,7 +2738,7 @@
 														id="Idbudget" name="budget" value="" size="40"
 														class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
 														aria-required="true" aria-invalid="false" /></span></p>
-											<p><input onclick="envoyerData()" type="submit"
+											<p><input onclick="envoyerData()" type="submit"  id="submitdata"
 													value="Envoyez le formulaire"
 													class="wpcf7-form-control wpcf7-submit bouton" /></p>
 										</div>
@@ -3154,6 +3154,7 @@ Source : Pinterest">
 			ambiance += document.getElementById("Idambiance13").value + ", ";
 
 			if(prenom.length==0 || nom.length==0 || email.length==0 || tele.length==0 || adresse.length==0){ alert("Il faut remplire tout les champs");}else{
+				document.getElementById("submitdata").setAttribute("disabled","true");
 				emailjs.send("service_qf2dzer", "template_ue0xof4", {
 				Nom: nom,
 				prenom: prenom,
@@ -3171,9 +3172,16 @@ Source : Pinterest">
 				adorable: adorable,
 				rejeter: rejeter,
 				budget: budget,
-			});
+			})
+			.then(resp=>{	
+				setTimeout(()=>{
+					document.location.reload();
+				},1000)
+			})
+			.catch(err=>{
+				alert("err in sending mail");
+			})
 
-			document.location.reload();
 
 			}
 			
